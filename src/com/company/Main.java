@@ -96,32 +96,31 @@ public class Main {
         }
     }
 
-        static void seventhArray(int[] arr, int n) {
-            System.out.println("____________________________________________");
-            for (int i : arr) {
-                System.out.print(i + " ");
-            }
-            System.out.print("(n = " + n + ") ");
-            if (n > 0) {
-                for (int i = 0; i < n; i++) {
-                    int tmp = arr[arr.length - 1];
-                    for (int j = arr.length - 1; j > 0; j--) {
-                        arr[j] = arr[j - 1];
-                    }
-                    arr[0] = tmp;
+    static void seventhArray(int[] arr, int n) {
+        System.out.println("____________________________________________");
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+        System.out.print("(n = " + n + ") ");
+        if (n > 0) {
+            for (int i = 0; i < n; i++) {
+                int tmp = arr[arr.length - 1];
+                for (int j = arr.length - 1; j > 0; j--) {
+                    arr[j] = arr[j - 1];
                 }
-            } else if (n < 0) {
-                for (int i = 0; i < n * (-1); i++) {
-                    // Left
-                    int tmp = arr[0];
-                    for (int j = 0; j < arr.length - 1; j++) {
-                        arr[j] = arr[j + 1];
-                    }
-                    arr[arr.length - 1] = tmp;
-                }
+                arr[0] = tmp;
             }
-            for (int i : arr) {
-                System.out.print(i + " ");
+        } else if (n < 0) {
+            for (int i = 0; i < n * (-1); i++) {
+                int tmp = arr[0];
+                for (int j = 0; j < arr.length - 1; j++) {
+                    arr[j] = arr[j + 1];
+                }
+                arr[arr.length - 1] = tmp;
             }
         }
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+    }
 }
